@@ -1,0 +1,2059 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Una Carta Especial Para Ti ✨</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+
+        .header {
+            background: linear-gradient(45deg, #ff9a9e, #fecfef);
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+        }
+
+        .header::before {
+            content: '✨';
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            font-size: 2em;
+            animation: sparkle 2s infinite;
+        }
+
+        .header::after {
+            content: '💝';
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 2em;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes sparkle {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.2) rotate(180deg); }
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: #4a4a4a;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            color: #666;
+            font-style: italic;
+        }
+
+        .content {
+            padding: 40px 30px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            padding: 25px;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .section h2 {
+            color: #5a67d8;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            text-align: center;
+        }
+
+        .interactive-input {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            font-size: 1.1em;
+            margin: 10px 0;
+            transition: border-color 0.3s ease;
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .interactive-input:focus {
+            outline: none;
+            border-color: #5a67d8;
+            box-shadow: 0 0 10px rgba(90, 103, 216, 0.3);
+        }
+
+        .question {
+            font-weight: bold;
+            color: #4a5568;
+            margin: 20px 0 10px 0;
+            font-size: 1.1em;
+        }
+
+        .memories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .memory-card {
+            background: linear-gradient(45deg, #ffecd2, #fcb69f);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .memory-card:hover {
+            transform: scale(1.05);
+        }
+
+        .btn-magic {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn-magic:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+
+        .surprise-box {
+            background: linear-gradient(45deg, #ffecd2, #fcb69f);
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            margin: 30px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .surprise-box::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
+            transform: rotate(45deg);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        .final-message {
+            text-align: center;
+            font-size: 1.3em;
+            line-height: 1.8;
+            color: #4a5568;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 20px;
+            margin-top: 30px;
+            position: relative;
+        }
+
+        .heart {
+            color: #e53e3e;
+            font-size: 1.5em;
+            animation: heartbeat 1.5s infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 10px;
+            background: #e2e8f0;
+            border-radius: 5px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+
+        .completed {
+            background: rgba(72, 187, 120, 0.1) !important;
+            border-left: 4px solid #48bb78;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Para Mi Niña de chinos hermosos</h1>
+            <p class="subtitle">Una carta especial llena de amor y recuerdos ✨</p>
+        </div>
+
+       
+            <div class="section" id="section1">
+                <h2>💕 Querida Mila</h2>
+                <p style="font-size: 1.2em; line-height: 1.8; text-align: center;">
+                    Hoy quise crear algo especial para ti, porque tu amistad significa el mundo para mí. 
+                    Descuide mucho nuestra amistad por pensar que siempre estarias para mi y me estoy dado cuenta de el gran error que cometi.
+                    Fui egoista y de verdad pido perdon,no me di cuenta que mi forma de ser te hacia sentir mal y solo me concentre e mi y lo que yo sentia,eres y lo digo enserio la persona mas importante para mi,no quiero perdes tu amistad jamas,por eso es que te hago esto,como una disculpa,una que debi haberte hecho antes y no me di cuenta pr concentrarme en otras cosas.
+                </p>
+            </div>
+
+            <div class="section" id="section2">
+                <h2>🌟 Nuestros Recuerdos Favoritos</h2>
+                <div class="question">¿Cuál es tu recuerdo favorito que tenemos juntas?</div>
+                <input type="text" class="interactive-input" id="memory1" placeholder="Yo no podria elegir uno,tengo demasiados...">
+                
+                <div class="question">¿Qué momento te ha hecho reír más conmigo?</div>
+                <input type="text" class="interactive-input" id="memory2" placeholder=" En mi caso siempre que estoy contigo me cago de risa...">
+                
+                <div class="question">¿Cuál fue la cosa mas cagada que hemos hechoo?</div>
+                <input type="text" class="interactive-input" id="memory3" placeholder="Mm siento que siempre hacemos cagadas juntas,y tu?...">
+            </div>
+
+<div class="seccion-momentos-especiales">
+    <h2 style="text-align: center; color: #5a67d8; margin-bottom: 30px; font-size: 2em;">
+        💫 Nosotras siendo nosotras
+    </h2>
+    
+    <div class="texto-principal">
+        <p style="font-size: 1.4em; text-align: center; line-height: 1.8; color: #4a5568; margin-bottom: 50px; font-style: italic;">
+            "Si pienso en un momento bonito,tu estas en cada uno de esos recuerdos.."
+        </p>
+    </div>
+    
+    <!-- Contenedor de fotos que aparecerán al hacer scroll -->
+    <div class="galeria-scroll">
+        <div class="foto-momento" data-scroll="fadeIn">
+            <div class="foto-container">
+                <img src="C:\Users\valet\OneDrive\Imágenes\Mis fotos\20250526_124401.jpg" alt="Momento especial 1" class="foto-recuerdo">
+                <div class="descripcion-foto">
+                    <p>Tu estudiosa,con tus lentesitos color rojo cereza</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="foto-momento" data-scroll="fadeIn">
+            <div class="foto-container">
+                <img src="C:\Users\valet\OneDrive\Imágenes\Mis fotos\IMG_20250601_184117_511.jpg" alt="Momento especial 2" class="foto-recuerdo">
+                <div class="descripcion-foto">
+                    <p>Nosotras cuando me hiciste la niña mas feliz y amada del mundo</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="foto-momento" data-scroll="fadeIn">
+            <div class="foto-container">
+                <img src="C:\Users\valet\OneDrive\Imágenes\Mis fotos\20250626_140626.jpg" alt="Momento especial 3" class="foto-recuerdo">
+                <div class="descripcion-foto">
+                    <p>Nosotras ignorando a Richi pq nos vale kaka y siendo felices</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="foto-momento" data-scroll="fadeIn">
+            <div class="foto-container">
+                <img src="C:\Users\valet\OneDrive\Imágenes\Mis fotos\20250619_134119.jpg" alt="Momento especial 4" class="foto-recuerdo">
+                <div class="descripcion-foto">
+                    <p>Nosotras siendo sexy hot,con lentes</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Puedes agregar más fotos copiando el div "foto-momento" -->
+    </div>
+    
+    <div class="mensaje-final-fotos">
+        <p style="text-align: center; font-size: 1.2em; color: #667eea; margin-top: 40px; font-weight: bold;">
+            ✨ Cada foto contigo,es un recuerdo que jamas olvidare ✨
+        </p>
+    </div>
+</div>
+
+<!-- ESTILOS CSS - Agrega esto en la sección <style> de tu carta -->
+<style>
+.seccion-momentos-especiales {
+    margin: 40px 0;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(240,248,255,0.9));
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.galeria-scroll {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.foto-momento {
+    margin: 60px 0;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-out;
+}
+
+.foto-momento.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.foto-container {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 25px;
+    background: rgba(255,255,255,0.95);
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.foto-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.foto-momento:nth-child(even) .foto-container {
+    flex-direction: row-reverse;
+}
+
+.foto-recuerdo {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+.foto-recuerdo:hover {
+    transform: scale(1.05);
+}
+
+.descripcion-foto {
+    flex: 1;
+    padding: 0 20px;
+}
+
+.descripcion-foto p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #4a5568;
+    text-align: left;
+    font-style: italic;
+    position: relative;
+    padding-left: 20px;
+}
+
+.descripcion-foto p::before {
+    content: '"';
+    font-size: 3em;
+    color: #667eea;
+    position: absolute;
+    left: -10px;
+    top: -20px;
+    opacity: 0.3;
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+    .foto-container {
+        flex-direction: column !important;
+        text-align: center;
+    }
+    
+    .foto-recuerdo {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+    }
+    
+    .descripcion-foto {
+        padding: 20px 0 0 0;
+    }
+    
+    .descripcion-foto p {
+        text-align: center;
+        padding-left: 0;
+    }
+    
+    .descripcion-foto p::before {
+        display: none;
+    }
+}
+
+/* Animaciones adicionales */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.foto-momento.visible {
+    animation: fadeInUp 0.8s ease-out;
+}
+</style>
+
+<!-- JAVASCRIPT - Agrega esto antes del cierre </body> -->
+<script>
+// Función para detectar cuando las fotos entran en la vista
+function observarFotos() {
+    const fotos = document.querySelectorAll('.foto-momento');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, {
+        threshold: 0.2, // La foto aparece cuando el 20% es visible
+        rootMargin: '0px 0px -50px 0px' // Aparece un poco antes de ser completamente visible
+    });
+    
+    fotos.forEach(foto => {
+        observer.observe(foto);
+    });
+}
+
+// Inicializar cuando la página cargue
+document.addEventListener('DOMContentLoaded', observarFotos);
+</script>
+
+            <div class="section" id="section3">
+                <h2>✨ Lo Que Admiro de Ti</h2>
+                <p style="text-align: center; margin-bottom: 20px;">Estas son algunas de las cosas increíbles que veo en ti:
+(haz clicl) </p>
+                <div class="memories-grid">
+                    <div class="memory-card" onclick="revealCompliment(this)">
+                        <strong>Tu sonrisa</strong><br>
+                        <span style="display:none;">de verdad es algo q ilumina dias milaaa,no sabes cuantas preocupaciones me has quitado con el simple hecho de que estuvieras ahi sonriendome</span>
+                    </div>
+                    <div class="memory-card" onclick="revealCompliment(this)">
+                        <strong>Tu lealtad</strong><br>
+                        <span style="display:none;">Siempre estás ahí cuando más te necesito y es algo que yo no e hecho,no estuve ahi para ti y quiero arreglarr las cosas,quiero ser,ahora si la amiga que te mereces,y quiero que me dejes intentarlo</span>
+                    </div>
+                    <div class="memory-card" onclick="revealCompliment(this)">
+                        <strong>Nuestras similitudes</strong><br>
+                        <span style="display:none;">El hecho que conbinemos en tantas cosas,que tengamos mismos gustos, que contigo puedo ser yo sin ser juzgada,que puedo contarte lo que sea y aun asi jamas hablaras mal de mi,es algo que amo mucho</span>
+                    </div>
+                    <div class="memory-card" onclick="revealCompliment(this)">
+                        <strong>TODO TU</strong><br>
+                        <span style="display:none;">Eres simplemente perfecta,no es necesario cambiar nadaaa,asi como estas ante mis ojos ya eres la niña mas bonita y maravillosa y extraordinario y perfecta </span>
+                    </div>
+                </div>
+                <div class="question">¿Qué es lo que más aprecias de nuestra amistad?</div>
+                <textarea class="interactive-input" id="appreciation" rows="3" placeholder="Comparte tus pensamientos..."></textarea>
+            </div>
+
+
+<div class="seccion-100-cosas">
+    <div class="header-100">
+        <h2 class="titulo-100">💝 100 Cosas Que Amo De Ti 💝</h2>
+        <p class="subtitulo-100">Cada número representa una razón por la que eres increíble</p>
+        
+        <!-- Botón para revelar toda la lista -->
+        <button class="btn-revelar" id="btn-revelar" onclick="revelarTodaLaLista()">
+            ✨ Revelar todas las razones ✨
+        </button>
+        
+        <!-- Contador de elementos revelados -->
+        <div class="contador" id="contador">
+            <span class="numero-actual">0</span> / <span class="numero-total">100</span> reveladas
+        </div>
+    </div>
+    
+    <!-- Contenedor de la lista -->
+    <div class="contenedor-lista" id="contenedor-lista">
+        <!-- Las 100 razones aparecerán aquí -->
+    </div>
+    
+    <!-- Mensaje final cuando se revelen todas -->
+    <div class="mensaje-100-completo" id="mensaje-completo" style="display: none;">
+        <h3>🎉 ¡Has descubierto las 100 razones! 🎉</h3>
+        <p>Y sabes qué... ¡podría escribir 1000 más! 💖</p>
+        <div class="corazones-finales">❤️ 💕 💖 💗 💝 ❤️</div>
+    </div>
+</div>
+
+<!-- ESTILOS CSS -->
+<style>
+.seccion-100-cosas {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 40px 30px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #667eea 100%);
+    border-radius: 25px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    position: relative;
+    overflow: hidden;
+}
+
+.seccion-100-cosas::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+    animation: brilloSutil 8s linear infinite;
+}
+
+@keyframes brilloSutil {
+    0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+    100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+}
+
+.header-100 {
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.titulo-100 {
+    font-size: 2.5em;
+    color: white;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    animation: latirTitulo 2s infinite;
+}
+
+@keyframes latirTitulo {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+}
+
+.subtitulo-100 {
+    font-size: 1.2em;
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
+.btn-revelar {
+    background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.1em;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(255, 107, 107, 0.4);
+    margin-bottom: 20px;
+}
+
+.btn-revelar:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 30px rgba(255, 107, 107, 0.6);
+}
+
+.contador {
+    font-size: 1.3em;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.numero-actual {
+    color: #ffd93d;
+    font-size: 1.2em;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.contenedor-lista {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.item-lista {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 15px 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    opacity: 0;
+    transform: translateY(20px) scale(0.9);
+    transition: all 0.5s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.item-lista::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    transition: left 0.5s ease;
+}
+
+.item-lista:hover::before {
+    left: 100%;
+}
+
+.item-lista.revelado {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.item-lista:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.numero-item {
+    display: inline-block;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+    font-weight: bold;
+    font-size: 0.9em;
+    margin-right: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.texto-item {
+    color: #4a5568;
+    font-size: 1em;
+    line-height: 1.4;
+    display: inline;
+}
+
+.item-especial {
+    background: linear-gradient(135deg, #ffeaa7, #fab1a0) !important;
+    border: 2px solid #e17055;
+    animation: destacar 2s infinite alternate;
+}
+
+@keyframes destacar {
+    0% { box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+    100% { box-shadow: 0 8px 25px rgba(225, 112, 85, 0.3); }
+}
+
+.mensaje-100-completo {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.mensaje-100-completo h3 {
+    font-size: 2em;
+    color: #e17055;
+    margin-bottom: 15px;
+}
+
+.mensaje-100-completo p {
+    font-size: 1.3em;
+    color: #4a5568;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.corazones-finales {
+    font-size: 2em;
+    animation: latirCorazones 1.5s infinite;
+}
+
+@keyframes latirCorazones {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .contenedor-lista {
+        grid-template-columns: 1fr;
+    }
+    
+    .titulo-100 {
+        font-size: 2em;
+    }
+    
+    .item-lista {
+        padding: 12px 15px;
+    }
+}
+</style>
+
+<!-- JAVASCRIPT -->
+<script>
+// Las 100 cosas que amas de ella - PERSONALIZA ESTA LISTA
+const razonesDeAmor = [
+    "Tu sonrisa que ilumina cualquier día",
+    "La forma en que me escuchas cuando más lo necesito",
+    "Tu risa contagiosa que me hace feliz",
+    "Tu corazón generoso que siempre piensa en otros",
+    "La manera en que me apoyas en todo",
+    "Tu sentido del humor increíble",
+    "Cómo me haces sentir especial",
+    "Tu lealtad incondicional",
+    "La forma en animas a cualquiera que este contigo",
+    "Tu manera única de ver el mundo",
+    "Cómo me abrazas cuando estoy triste",
+    "El exfuerso que le pones a lo que t gusta",
+    "La paciencia que tienes conmigo",
+    "Tu forma de cantar tan bella",
+    "Cómo me motivas a ser mejor persona",
+    "Tu bondad natural",
+    "La manera en que cuidas a todos",
+    "Tu fuerza interior increíble",
+    "Cómo celebras mis logros",
+    "Tu capacidad de perdón",
+    "La forma en que me haces reír hasta llorar",
+    "Como animas a otros",
+    "Cómo guardas mis secretos",
+    "Tu manera de dar consejos sabios",
+    "La forma en que me animas cuando dudo",
+    "Tu mente brillante,aunque no lo creas",
+    "Cómo haces que los problemas parezcan pequeños",
+    "Tu manera de ser auténtica siempre",
+    "La forma en que me conoces mejor que nadie",
+    "Tu capacidad para biologia",
+    "Cómo me inspiras todos los días",
+    "Tu manera de hacer que todo sea más divertido",
+    "La forma en que me cuidas",
+    "Tu determinación admirable",
+    "Cómo me haces sentir importante",
+    "Tu manera de encontrar lo bueno en todo",
+    "La forma en que me das la mano",
+    "Tu corazón puro y sincero",
+    "Cómo me perdonas mis errores",
+    "Tu manera de hacerme sonreír",
+    "La forma en que compartes conmigo",
+    "Tu energía positiva contagiosa",
+    "Cómo me entiendes sin palabras",
+    "Tu manera de ser mi refugio",
+    "La forma en que me das esperanza",
+    "Tu buen gusto musical",
+    "Cómo haces que me sienta en casa",
+    "Tu manera de celebrar la vida",
+    "La forma en que me amas tal como soy",
+    "El que TU seas mi casa",
+    "Cómo me das fuerzas cuando las necesito",
+    "Tu forma de ser",
+    "La forma en que me proteges",
+    "Tu capacidad de amar incondicionalmente",
+    "Cómo me haces mejor persona",
+    "Tu manera de iluminar cualquier lugar",
+    "La forma en que me das confianza",
+    "Tu corazón que no conoce límites para amarme",
+    "Cómo me haces sentir valiosa",
+    "Tu manera de convertir lágrimas en sonrisas",
+    "La forma en que crees en mí",
+    "Tu alma hermosa y genuina",
+    "Cómo me das paz en el caos",
+    "Tu manera de hacer que todo valga la pena",
+    "La forma en que me complementas perfectamente",
+    "Tu capacidad de amar sin condiciones",
+    "Cómo me haces sentir única",
+    "Tu manera de ser mi lugar seguro",
+    "La forma en que me das alegría",
+    "Tu corazón que late con el mío",
+    "Cómo me haces creer en el amor verdadero",
+    "El hecho que genuinamente creo que eres mi alma gemela",
+    "La forma en que me das propósito",
+    "Tu alma que conecta con la mía",
+    "Cómo me haces sentir completa",
+    "Tu manera de hacer que cada día sea especial",
+    "La forma en que me das esperanza",
+    "nuestros 23 casi 24 mometos juntas",
+    "Cómo me haces sentir invencible..",
+    "Tu manera de amar con todo el corazón",
+    "La forma en que me haces feliz",
+    "Tu presencia que calma mi alma",
+    "Cómo me das razones para sonreír",
+    "Tu manera de hacer que todo tenga sentido",
+    "La forma en que me das amor",
+    "Tu corazón que es mi hogar",
+    "Cómo me haces sentir amada",
+    "Tu manera de ser mi todo",
+    "La forma en que me das vida",
+    "Tu alma gemela que encontró la mía",
+    "Tu bellezaaaaaaa inigualableee",
+    "Tu manera de hacer que el amor sea real",
+    "La forma en que me das tu corazón",
+    "Tu amor que es mi mayor tesoro",
+    "Cómo me haces sentir",
+    "Tu manera de ser mi razón de ser",
+    "La forma en que me amas sin medida",
+    "Tu corazón que es mi todo",
+    "Cómo me haces sentir infinito",
+    "Tu manera de ser mi para siempre",
+    "Porque eres simplemente perfecta para mí"
+];
+
+let elementosRevelados = 0;
+let intervaloRevelacion = null;
+
+function inicializarLista() {
+    const contenedor = document.getElementById('contenedor-lista');
+    
+    // Crear todos los elementos pero ocultos
+    razonesDeAmor.forEach((razon, index) => {
+        const item = document.createElement('div');
+        item.className = 'item-lista';
+        item.id = `item-${index + 1}`;
+        
+        // Hacer algunos elementos especiales (múltiplos de 10)
+        if ((index + 1) % 10 === 0) {
+            item.classList.add('item-especial');
+        }
+        
+        item.innerHTML = `
+            <span class="numero-item">${index + 1}</span>
+            <span class="texto-item">${razon}</span>
+        `;
+        
+        // Agregar efecto de clic
+        item.addEventListener('click', function() {
+            this.style.background = 'linear-gradient(135deg, #a8edea, #fed6e3)';
+            setTimeout(() => {
+                this.style.background = '';
+            }, 1000);
+        });
+        
+        contenedor.appendChild(item);
+    });
+}
+
+function revelarSiguienteItem() {
+    if (elementosRevelados < razonesDeAmor.length) {
+        const item = document.getElementById(`item-${elementosRevelados + 1}`);
+        if (item) {
+            // Pequeño delay para efecto escalonado
+            setTimeout(() => {
+                item.classList.add('revelado');
+                elementosRevelados++;
+                actualizarContador();
+                
+                // Scroll suave hacia el elemento
+                item.scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'center',
+                    inline: 'nearest'
+                });
+                
+                // Si llegamos a 100, mostrar mensaje final
+                if (elementosRevelados === 100) {
+                    setTimeout(() => {
+                        mostrarMensajeFinal();
+                    }, 1000);
+                }
+            }, elementosRevelados * 50); // Delay incremental
+        }
+    }
+}
+
+function revelarTodaLaLista() {
+    const btn = document.getElementById('btn-revelar');
+    btn.textContent = '✨ Revelando... ✨';
+    btn.disabled = true;
+    btn.style.opacity = '0.7';
+    
+    // Revelar todos los elementos con delay
+    for (let i = elementosRevelados; i < razonesDeAmor.length; i++) {
+        setTimeout(() => {
+            revelarSiguienteItem();
+        }, (i - elementosRevelados) * 100);
+    }
+    
+    // Ocultar botón después de revelar todo
+    setTimeout(() => {
+        btn.style.display = 'none';
+    }, razonesDeAmor.length * 100 + 1000);
+}
+
+function actualizarContador() {
+    const numeroActual = document.querySelector('.numero-actual');
+    numeroActual.textContent = elementosRevelados;
+    
+    // Efecto de crecimiento en el número
+    numeroActual.style.transform = 'scale(1.3)';
+    numeroActual.style.color = '#ffd93d';
+    setTimeout(() => {
+        numeroActual.style.transform = 'scale(1)';
+    }, 200);
+}
+
+function mostrarMensajeFinal() {
+    const mensajeFinal = document.getElementById('mensaje-completo');
+    mensajeFinal.style.display = 'block';
+    
+    // Scroll hacia el mensaje
+    mensajeFinal.scrollIntoView({ 
+        behavior: 'smooth', 
+        block: 'center' 
+    });
+    
+    // Crear confeti de corazones
+    crearConfetiCorazones();
+}
+
+function crearConfetiCorazones() {
+    const corazones = ['❤️', '💕', '💖', '💗', '💝', '💘'];
+    
+    for (let i = 0; i < 30; i++) {
+        setTimeout(() => {
+            const corazon = document.createElement('div');
+            corazon.textContent = corazones[Math.floor(Math.random() * corazones.length)];
+            corazon.style.cssText = `
+                position: fixed;
+                font-size: 25px;
+                left: ${Math.random() * window.innerWidth}px;
+                top: -50px;
+                pointer-events: none;
+                z-index: 1000;
+                animation: caerCorazon 4s linear forwards;
+            `;
+            
+            document.body.appendChild(corazon);
+            
+            setTimeout(() => {
+                if (corazon.parentNode) {
+                    corazon.parentNode.removeChild(corazon);
+                }
+            }, 4000);
+        }, i * 200);
+    }
+}
+
+// CSS adicional para animación de corazones
+const estiloCorazones = document.createElement('style');
+estiloCorazones.textContent = `
+    @keyframes caerCorazon {
+        0% {
+            transform: translateY(-100px) rotate(0deg);
+            opacity: 1;
+        }
+        100% {
+            transform: translateY(${window.innerHeight + 100}px) rotate(360deg);
+            opacity: 0;
+        }
+    }
+`;
+document.head.appendChild(estiloCorazones);
+
+// Inicializar cuando cargue la página
+document.addEventListener('DOMContentLoaded', function() {
+    inicializarLista();
+});
+</script>
+
+            <div class="seccion-pregunta-magica">
+    <div class="contenedor-pregunta">
+        <h2 class="titulo-pregunta">💕 Una Pregunta Especial</h2>
+        
+        <div class="texto-pregunta">
+            <p>¿Me dejas volver a ser tu mejor amiga, esta vez haciendo las cosas bien?</p>
+            <p class="instruccion">(Aprieta el rojo 5 veces si quieres ver la magia ✨)</p>
+        </div>
+        
+        <div class="contenedor-botones" id="contenedor-botones">
+            <button class="boton-no" id="boton-no" onclick="intentarDecirNo()">No</button>
+            <button class="boton-si-inicial" id="boton-si" onclick="decirSi()">Sí</button>
+        </div>
+        
+        <!-- Mensaje final oculto -->
+        <div class="mensaje-final" id="mensaje-final" style="display: none;">
+            <h3>🎉 ¡ESOOOOOO! 🎉</h3>
+            <p class="te-amo">💖 TE AMO COMO NO TIENES IDEA MI MILA HERMOSA💖</p>
+            <p>¡Esta oportunidad no la voy a desaprovechar! ✨</p>
+        </div>
+    </div>
+</div>
+
+<!-- ESTILOS CSS -->
+<style>
+.seccion-pregunta-magica {
+    margin: 50px auto;
+    max-width: 600px;
+    padding: 40px 30px;
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    border-radius: 25px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    text-align: center;
+    position: relative;
+    overflow: visible;
+}
+
+.titulo-pregunta {
+    font-size: 2.2em;
+    color: #d53f8c;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.texto-pregunta p {
+    font-size: 1.4em;
+    color: #4a5568;
+    margin: 20px 0;
+    font-weight: bold;
+    line-height: 1.6;
+}
+
+.instruccion {
+    font-size: 1.1em !important;
+    color: #e53e3e !important;
+    font-style: italic;
+    font-weight: normal !important;
+    animation: parpadeo 2s infinite;
+}
+
+@keyframes parpadeo {
+    0%, 50% { opacity: 1; }
+    25%, 75% { opacity: 0.5; }
+}
+
+.contenedor-botones {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    margin: 40px 0;
+    min-height: 80px;
+    align-items: center;
+    position: relative;
+}
+
+/* Botón NO (el travieso que se mueve) */
+.boton-no {
+    background: linear-gradient(45deg, #e53e3e, #c53030);
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.3em;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(229, 62, 62, 0.4);
+    position: relative;
+    z-index: 10;
+}
+
+.boton-no:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(229, 62, 62, 0.6);
+}
+
+/* Botón SÍ inicial */
+.boton-si-inicial {
+    background: linear-gradient(45deg, #38a169, #2f855a);
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.3em;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(56, 161, 105, 0.4);
+}
+
+.boton-si-inicial:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(56, 161, 105, 0.6);
+}
+
+/* Botón SÍ final (cuando ya cambió) */
+.boton-si-final {
+    background: linear-gradient(45deg, #38a169, #2f855a) !important;
+    color: white !important;
+    animation: brillar 1s infinite alternate;
+}
+
+@keyframes brillar {
+    0% { box-shadow: 0 5px 15px rgba(56, 161, 105, 0.4); }
+    100% { box-shadow: 0 5px 25px rgba(56, 161, 105, 0.8), 0 0 30px rgba(56, 161, 105, 0.3); }
+}
+
+/* Animaciones para el botón que se mueve */
+.mover-derecha {
+    animation: moverDerecha 0.5s ease-in-out;
+    transform: translateX(150px);
+}
+
+.mover-izquierda {
+    animation: moverIzquierda 0.5s ease-in-out;
+    transform: translateX(-150px);
+}
+
+.volverse-pequeno {
+    animation: volversePequeno 0.5s ease-in-out;
+    transform: scale(0.7);
+}
+
+@keyframes moverDerecha {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(150px); }
+}
+
+@keyframes moverIzquierda {
+    0% { transform: translateX(150px); }
+    100% { transform: translateX(-150px); }
+}
+
+@keyframes volversePequeno {
+    0% { transform: translateX(-150px) scale(1); }
+    100% { transform: translateX(-150px) scale(0.7); }
+}
+
+/* Mensaje final */
+.mensaje-final {
+    margin-top: 40px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.mensaje-final h3 {
+    font-size: 2em;
+    color: #d53f8c;
+    margin-bottom: 20px;
+    animation: celebrar 1s ease-in-out;
+}
+
+.te-amo {
+    font-size: 1.8em;
+    color: #e53e3e;
+    font-weight: bold;
+    margin: 20px 0;
+    animation: latirCorazon 1.5s infinite;
+}
+
+@keyframes latirCorazon {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+@keyframes celebrar {
+    0% { transform: scale(0.8) rotate(-10deg); }
+    50% { transform: scale(1.1) rotate(5deg); }
+    100% { transform: scale(1) rotate(0deg); }
+}
+
+/* Confeti */
+.confeti {
+    position: fixed;
+    font-size: 25px;
+    pointer-events: none;
+    z-index: 1000;
+    animation: caerConfeti 3s linear forwards;
+}
+
+@keyframes caerConfeti {
+    0% {
+        transform: translateY(-100vh) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .contenedor-botones {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .mover-derecha {
+        transform: translateY(-80px);
+    }
+    
+    .mover-izquierda {
+        transform: translateY(80px);
+    }
+    
+    .volverse-pequeno {
+        transform: translateY(80px) scale(0.7);
+    }
+    
+    @keyframes moverDerecha {
+        0% { transform: translateY(0); }
+        100% { transform: translateY(-80px); }
+    }
+    
+    @keyframes moverIzquierda {
+        0% { transform: translateY(-80px); }
+        100% { transform: translateY(80px); }
+    }
+    
+    @keyframes volversePequeno {
+        0% { transform: translateY(80px) scale(1); }
+        100% { transform: translateY(80px) scale(0.7); }
+    }
+}
+</style>
+
+<!-- JAVASCRIPT -->
+<script>
+let intentosNo = 0;
+
+function intentarDecirNo() {
+    const botonNo = document.getElementById('boton-no');
+    intentosNo++;
+    
+    // Eliminar clases anteriores
+    botonNo.classList.remove('mover-derecha', 'mover-izquierda', 'volverse-pequeno');
+    
+    switch(intentosNo) {
+        case 1:
+            // Primera vez: se mueve a la derecha
+            botonNo.classList.add('mover-derecha');
+            mostrarMensajeTemporalNo("¡Ey! ¡El botón se movió! 😄");
+            break;
+            
+        case 2:
+            // Segunda vez: se mueve a la izquierda
+            botonNo.classList.remove('mover-derecha');
+            botonNo.classList.add('mover-izquierda');
+            mostrarMensajeTemporalNo("¡Se movió otra vez! ¿No te rindes? 😏");
+            break;
+            
+        case 3:
+            // Tercera vez: se vuelve pequeño
+            botonNo.classList.add('volverse-pequeno');
+            mostrarMensajeTemporalNo("¡Ahora se hizo pequeño! 🤭");
+            break;
+            
+        case 4:
+            // Cuarta vez: se vuelve verde
+            botonNo.style.background = 'linear-gradient(45deg, #38a169, #2f855a)';
+            botonNo.style.boxShadow = '0 5px 15px rgba(56, 161, 105, 0.4)';
+            mostrarMensajeTemporalNo("¡Se volvió verde! 🤔");
+            break;
+            
+        case 5:
+            // Quinta vez: dice "Sí" también
+            botonNo.textContent = 'Sí';
+            botonNo.classList.add('boton-si-final');
+            mostrarMensajeTemporalNo("¡Ya no tienes opción! 😂");
+            
+            // Después de 2 segundos, activar la celebración
+            setTimeout(() => {
+                decirSi();
+            }, 2000);
+            break;
+    }
+}
+
+function decirSi() {
+    // Ocultar botones
+    document.getElementById('contenedor-botones').style.display = 'none';
+    
+    // Mostrar mensaje final
+    const mensajeFinal = document.getElementById('mensaje-final');
+    mensajeFinal.style.display = 'block';
+    
+    // Crear confeti
+    crearConfeti();
+    
+    // Reproducir sonido de celebración (opcional)
+    reproducirCelebracion();
+}
+
+function mostrarMensajeTemporalNo(mensaje) {
+    // Crear elemento de mensaje temporal
+    const mensajeTemp = document.createElement('div');
+    mensajeTemp.textContent = mensaje;
+    mensajeTemp.style.cssText = `
+        position: absolute;
+        top: -50px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(255, 107, 107, 0.9);
+        color: white;
+        padding: 10px 20px;
+        border-radius: 20px;
+        font-size: 1em;
+        font-weight: bold;
+        z-index: 100;
+        animation: aparecerMensaje 3s ease-in-out;
+    `;
+    
+    // Agregar al contenedor
+    document.querySelector('.seccion-pregunta-magica').appendChild(mensajeTemp);
+    
+    // Eliminar después de 3 segundos
+    setTimeout(() => {
+        if (mensajeTemp.parentNode) {
+            mensajeTemp.parentNode.removeChild(mensajeTemp);
+        }
+    }, 3000);
+}
+
+function crearConfeti() {
+    const emojisConfeti = ['🎉', '🎊', '✨', '💖', '❤️', '🌟', '💕', '🎈', '🦄', '🌈'];
+    
+    // Crear 50 piezas de confeti
+    for (let i = 0; i < 50; i++) {
+        setTimeout(() => {
+            const confeti = document.createElement('div');
+            confeti.className = 'confeti';
+            confeti.textContent = emojisConfeti[Math.floor(Math.random() * emojisConfeti.length)];
+            confeti.style.left = Math.random() * window.innerWidth + 'px';
+            confeti.style.animationDelay = Math.random() * 2 + 's';
+            confeti.style.animationDuration = (Math.random() * 3 + 2) + 's';
+            
+            document.body.appendChild(confeti);
+            
+            // Eliminar después de la animación
+            setTimeout(() => {
+                if (confeti.parentNode) {
+                    confeti.parentNode.removeChild(confeti);
+                }
+            }, 5000);
+        }, i * 100);
+    }
+}
+
+function reproducirCelebracion() {
+    // Efecto de vibración (si es móvil)
+    if (navigator.vibrate) {
+        navigator.vibrate([200, 100, 200]);
+    }
+}
+
+// CSS adicional para el mensaje temporal
+const estiloMensajeTemp = document.createElement('style');
+estiloMensajeTemp.textContent = `
+    @keyframes aparecerMensaje {
+        0% { opacity: 0; transform: translateX(-50%) translateY(-20px); }
+        20% { opacity: 1; transform: translateX(-50%) translateY(0); }
+        80% { opacity: 1; transform: translateX(-50%) translateY(0); }
+        100% { opacity: 0; transform: translateX(-50%) translateY(-20px); }
+    }
+`;
+document.head.appendChild(estiloMensajeTemp);
+</script>
+
+            <div class="surprise-box">
+                <h2>🎁 ¡Sorpresa Especial!</h2>
+                <button class="btn-magic" onclick="showSurprise()">Haz clic para tu sorpresa</button>
+                <div id="surpriseMessage" style="display:none; margin-top: 20px;">
+                    <p style="font-size: 1.3em;">🌟 ¡ERES LA NIÑA MAS HERMOSA DEL MUNDO,MI NIÑA DE CHINOS HERMOSA,OJOS TIERNOS,CARA DE ANGEL Y LA QUE QUIERO TENER EN MI VIDA TODOS LOS MALDITOS DIAS Q RESPIRE! 🌟</p>
+                    <p> jamas t vayas de mi vida ✨</p>
+                </div>
+            </div>
+
+<div class="seccion-disculpas">
+    <!-- Título principal con efectos -->
+    <div class="header-disculpas">
+        <h2 class="titulo-disculpas">🌊 Mis Disculpas Desde el Corazón 🌊</h2>
+        <div class="linea-decorativa"></div>
+    </div>
+    
+    <!-- Contenedor principal con efecto de ondas -->
+    <div class="contenedor-principal">
+        <!-- Mensaje de disculpas - PERSONALIZA AQUÍ TU TEXTO -->
+        <div class="carta-disculpas">
+            <div class="icono-carta">💌</div>
+            <div class="texto-principal">
+                <p class="parrafo-disculpa">
+                    <strong>Mi querida MILA,</strong><br><br>
+                    Sé que he cometido errores que lastimaron nuestra hermosa amistad, y quiero que sepas que de vrdd estoy muy arrepentida de todo lo mal que he hecho,por que se que POR MI CULPA te sentiste mal por ello y quiero arreglar mi cagada.
+                </p>
+                
+                <p class="parrafo-disculpa">
+                    Me duele saber que mis acciones o palabras pudieron haberte hecho sentir mal. Nunca fue mi intención herirte, pero entiendo que las intenciones no siempre bastan para sanar el dolor causado.
+                </p>
+                
+                <p class="parrafo-disculpa">
+                    <strong>Te pido perdón</strong> por cada momento en que no estuve ahí cuando me necesitabas, por las veces que puse otras cosas antes que nuestra amistad, y por no valorar lo suficiente todoooooo lo que tenía y tengo contigo.
+                </p>
+                
+                <p class="parrafo-disculpa">
+                    He aprendido de mis errores, he crecido, y ahora entiendo el verdadero valor de tener a alguien como tú en mi vida. Quiero ser la amiga que mereces, la que siempre debí haber sido.
+                </p>
+                
+                <p class="parrafo-final">
+                    Si me das una segunda oportunidad, te prometo que cuidaré nuestra amistad como lo más preciado que es. Porque tú no eres solo mi amiga... eres mi familia Mila,eres quien siempre estuvo ahi para mi y quiero ser eso mismo para ti. 💚
+                </p>
+            </div>
+        </div>
+        
+        <!-- Sección interactiva de perdón -->
+        <div class="seccion-interactiva">
+            <div class="pregunta-perdon">
+                <h3>¿Podrás perdonarme?</h3>
+                <div class="botones-perdon">
+                    <button class="btn-perdon si" onclick="mostrarPerdon()">
+                        💚 Sí, te perdono
+                    </button>
+                    <button class="btn-perdon necesito-tiempo" onclick="mostrarTiempo()">
+                        🤔 Necesito tiempo
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mensaje cuando perdona -->
+            <div class="respuesta-perdon" id="respuesta-si" style="display: none;">
+                <div class="mensaje-perdon-si">
+                    <h3>💚 ¡Gracias por tu perdón mi niña! 💚</h3>
+                    <p>Prometo que esta nueva oportunidad no será desperdiciada.Sere esa amiga que tu eres conmigo</p>
+                    <div class="promesas">
+                        <div class="promesa">✨ Prometo escucharte siempre</div>
+                        <div class="promesa">✨ Prometo estar ahí para ti</div>
+                        <div class="promesa">✨ Prometo valorar nuestra amistad</div>
+                        <div class="promesa">✨ Prometo ser tu apoyo incondicional</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mensaje cuando necesita tiempo -->
+            <div class="respuesta-perdon" id="respuesta-tiempo" style="display: none;">
+                <div class="mensaje-perdon-tiempo">
+                    <h3>🌿 Respeto tu decisión 🌿</h3>
+                    <p>Entiendo que necesites tiempo, y está bien. El perdón no se puede forzar, y respeto completamente tus sentimientos.</p>
+                    <p>Estaré aquí esperando, trabajando en ser mejor cada día, hasta que sientas que estás lista... o hasta que decidas que es momento de seguir adelante.</p>
+                    <p><em>Tu paz mental son más importantes que cualquier cosa.Pero sabes que siempre puedes contar conmigo para lo que sea</em></p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Flores decorativas flotantes -->
+        <div class="flores-flotantes">
+            <div class="flor">🌸</div>
+            <div class="flor">🌺</div>
+            <div class="flor">🌻</div>
+            <div class="flor">🌷</div>
+            <div class="flor">🌹</div>
+        </div>
+    </div>
+    
+    <!-- Mensaje final de esperanza -->
+    <div class="mensaje-esperanza">
+        <p>Sea cual sea tu respuesta, quiero que sepas que siempre llevarás un lugar especial en mi corazón. 💙</p>
+    </div>
+</div>
+
+<!-- ESTILOS CSS -->
+<style>
+.seccion-disculpas {
+    margin: 60px auto;
+    max-width: 900px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Header con título */
+.header-disculpas {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.titulo-disculpas {
+    font-size: 2.8em;
+    background: linear-gradient(135deg, #2dd4bf, #06b6d4, #0ea5e9, #3b82f6);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradienteMovimiento 4s ease infinite;
+    text-shadow: 0 0 30px rgba(45, 212, 191, 0.3);
+    margin-bottom: 20px;
+}
+
+@keyframes gradienteMovimiento {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.linea-decorativa {
+    width: 200px;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, #2dd4bf, #06b6d4, #0ea5e9, transparent);
+    margin: 0 auto;
+    border-radius: 2px;
+    animation: brilloLinea 3s ease-in-out infinite;
+}
+
+@keyframes brilloLinea {
+    0%, 100% { opacity: 0.7; transform: scaleX(1); }
+    50% { opacity: 1; transform: scaleX(1.2); }
+}
+
+/* Contenedor principal */
+.contenedor-principal {
+    background: linear-gradient(135deg, 
+        rgba(52, 211, 153, 0.1) 0%,
+        rgba(14, 165, 233, 0.1) 25%,
+        rgba(59, 130, 246, 0.1) 50%,
+        rgba(16, 185, 129, 0.1) 75%,
+        rgba(45, 212, 191, 0.1) 100%);
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    padding: 50px 40px;
+    border: 1px solid rgba(45, 212, 191, 0.2);
+    box-shadow: 
+        0 20px 40px rgba(45, 212, 191, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    position: relative;
+    animation: respiracion 6s ease-in-out infinite;
+}
+
+@keyframes respiracion {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.01); }
+}
+
+/* Carta de disculpas */
+.carta-disculpas {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 25px;
+    padding: 40px 35px;
+    margin-bottom: 40px;
+    box-shadow: 
+        0 15px 35px rgba(45, 212, 191, 0.15),
+        0 5px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(45, 212, 191, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.carta-disculpas::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, #2dd4bf, #06b6d4, #0ea5e9, #10b981, #2dd4bf);
+    background-size: 200% 100%;
+    animation: ondaGradiente 3s linear infinite;
+}
+
+@keyframes ondaGradiente {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 200% 50%; }
+}
+
+.icono-carta {
+    text-align: center;
+    font-size: 3em;
+    margin-bottom: 25px;
+    animation: latirSuave 2s ease-in-out infinite;
+}
+
+@keyframes latirSuave {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.texto-principal {
+    line-height: 1.8;
+    color: #374151;
+}
+
+.parrafo-disculpa {
+    font-size: 1.2em;
+    margin-bottom: 25px;
+    text-align: justify;
+    position: relative;
+    padding-left: 20px;
+}
+
+.parrafo-disculpa::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 4px;
+    height: 20px;
+    background: linear-gradient(135deg, #2dd4bf, #06b6d4);
+    border-radius: 2px;
+}
+
+.parrafo-final {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #059669;
+    text-align: center;
+    margin-top: 30px;
+    padding: 25px;
+    background: linear-gradient(135deg, rgba(45, 212, 191, 0.1), rgba(16, 185, 129, 0.1));
+    border-radius: 20px;
+    border: 2px solid rgba(45, 212, 191, 0.3);
+}
+
+/* Sección interactiva */
+.seccion-interactiva {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 25px;
+    padding: 35px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(6, 182, 212, 0.2);
+    border: 1px solid rgba(6, 182, 212, 0.3);
+}
+
+.pregunta-perdon h3 {
+    font-size: 1.8em;
+    color: #0369a1;
+    margin-bottom: 25px;
+}
+
+.botones-perdon {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-perdon {
+    padding: 18px 35px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.btn-perdon.si {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+}
+
+.btn-perdon.si:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(16, 185, 129, 0.4);
+}
+
+.btn-perdon.necesito-tiempo {
+    background: linear-gradient(135deg, #0ea5e9, #0284c7);
+    color: white;
+}
+
+.btn-perdon.necesito-tiempo:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(14, 165, 233, 0.4);
+}
+
+/* Respuestas de perdón */
+.respuesta-perdon {
+    margin-top: 30px;
+    padding: 30px;
+    border-radius: 20px;
+    animation: aparecerSuave 0.8s ease-out;
+}
+
+@keyframes aparecerSuave {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.mensaje-perdon-si {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(45, 212, 191, 0.1));
+    padding: 30px;
+    border-radius: 20px;
+    border: 2px solid rgba(16, 185, 129, 0.3);
+}
+
+.mensaje-perdon-si h3 {
+    color: #059669;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+.promesas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.promesa {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 15px 20px;
+    border-radius: 15px;
+    color: #065f46;
+    font-weight: bold;
+    border-left: 4px solid #10b981;
+    transition: all 0.3s ease;
+}
+
+.promesa:hover {
+    transform: translateX(5px);
+    box-shadow: 0 5px 15px rgba(16, 185, 129, 0.2);
+}
+
+.mensaje-perdon-tiempo {
+    background: linear-gradient(135deg, rgba(14, 165, 233, 0.1), rgba(59, 130, 246, 0.1));
+    padding: 30px;
+    border-radius: 20px;
+    border: 2px solid rgba(14, 165, 233, 0.3);
+}
+
+.mensaje-perdon-tiempo h3 {
+    color: #0284c7;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+.mensaje-perdon-tiempo p {
+    color: #374151;
+    font-size: 1.1em;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+/* Flores flotantes */
+.flores-flotantes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.flor {
+    position: absolute;
+    font-size: 1.5em;
+    animation: flotarFlor 8s ease-in-out infinite;
+    opacity: 0.6;
+}
+
+.flor:nth-child(1) { top: 10%; left: 5%; animation-delay: 0s; }
+.flor:nth-child(2) { top: 20%; right: 10%; animation-delay: 1.5s; }
+.flor:nth-child(3) { top: 60%; left: 8%; animation-delay: 3s; }
+.flor:nth-child(4) { bottom: 20%; right: 5%; animation-delay: 4.5s; }
+.flor:nth-child(5) { bottom: 10%; left: 50%; animation-delay: 6s; }
+
+@keyframes flotarFlor {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    33% { transform: translateY(-20px) rotate(120deg); }
+    66% { transform: translateY(-10px) rotate(240deg); }
+}
+
+/* Mensaje de esperanza */
+.mensaje-esperanza {
+    text-align: center;
+    margin-top: 40px;
+    padding: 30px;
+    background: linear-gradient(135deg, rgba(45, 212, 191, 0.1), rgba(59, 130, 246, 0.1));
+    border-radius: 25px;
+    border: 1px solid rgba(45, 212, 191, 0.3);
+}
+
+.mensaje-esperanza p {
+    font-size: 1.3em;
+    color: #0369a1;
+    font-style: italic;
+    font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .contenedor-principal {
+        padding: 30px 20px;
+    }
+    
+    .carta-disculpas {
+        padding: 25px 20px;
+    }
+    
+    .titulo-disculpas {
+        font-size: 2.2em;
+    }
+    
+    .botones-perdon {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .promesas {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+
+<!-- JAVASCRIPT -->
+<script>
+function mostrarPerdon() {
+    // Ocultar pregunta y botones
+    document.querySelector('.pregunta-perdon').style.display = 'none';
+    
+    // Mostrar respuesta de perdón
+    const respuestaSi = document.getElementById('respuesta-si');
+    respuestaSi.style.display = 'block';
+    
+    // Crear efecto de corazones cayendo
+    crearCorazonesCayendo();
+    
+    // Scroll suave hacia la respuesta
+    respuestaSi.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+function mostrarTiempo() {
+    // Ocultar pregunta y botones
+    document.querySelector('.pregunta-perdon').style.display = 'none';
+    
+    // Mostrar respuesta de tiempo
+    const respuestaTiempo = document.getElementById('respuesta-tiempo');
+    respuestaTiempo.style.display = 'block';
+    
+    // Crear efecto de hojas cayendo
+    crearHojasCayendo();
+    
+    // Scroll suave hacia la respuesta
+    respuestaTiempo.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+function crearCorazonesCayendo() {
+    const corazones = ['💚', '💙', '💛', '🤍', '💖', '✨'];
+    
+    for (let i = 0; i < 25; i++) {
+        setTimeout(() => {
+            const corazon = document.createElement('div');
+            corazon.textContent = corazones[Math.floor(Math.random() * corazones.length)];
+            corazon.style.cssText = `
+                position: fixed;
+                font-size: 20px;
+                left: ${Math.random() * window.innerWidth}px;
+                top: -50px;
+                pointer-events: none;
+                z-index: 1000;
+                animation: caerCorazonVerde 4s linear forwards;
+            `;
+            
+            document.body.appendChild(corazon);
+            
+            setTimeout(() => {
+                if (corazon.parentNode) {
+                    corazon.parentNode.removeChild(corazon);
+                }
+            }, 4000);
+        }, i * 150);
+    }
+}
+
+function crearHojasCayendo() {
+    const hojas = ['🌿', '🍃', '🌱', '🌊', '💙'];
+    
+    for (let i = 0; i < 20; i++) {
+        setTimeout(() => {
+            const hoja = document.createElement('div');
+            hoja.textContent = hojas[Math.floor(Math.random() * hojas.length)];
+            hoja.style.cssText = `
+                position: fixed;
+                font-size: 18px;
+                left: ${Math.random() * window.innerWidth}px;
+                top: -50px;
+                pointer-events: none;
+                z-index: 1000;
+                animation: caerHojaAzul 5s ease-out forwards;
+            `;
+            
+            document.body.appendChild(hoja);
+            
+            setTimeout(() => {
+                if (hoja.parentNode) {
+                    hoja.parentNode.removeChild(hoja);
+                }
+            }, 5000);
+        }, i * 200);
+    }
+}
+
+// CSS adicional para animaciones
+const estilosAdicionales = document.createElement('style');
+estilosAdicionales.textContent = `
+    @keyframes caerCorazonVerde {
+        0% {
+            transform: translateY(-100px) rotate(0deg);
+            opacity: 1;
+        }
+        100% {
+            transform: translateY(${window.innerHeight + 100}px) rotate(360deg);
+            opacity: 0;
+        }
+    }
+    
+    @keyframes caerHojaAzul {
+        0% {
+            transform: translateY(-100px) rotate(0deg) translateX(0);
+            opacity: 1;
+        }
+        50% {
+            transform: translateY(${window.innerHeight/2}px) rotate(180deg) translateX(50px);
+            opacity: 0.8;
+        }
+        100% {
+            transform: translateY(${window.innerHeight + 100}px) rotate(360deg) translateX(0);
+            opacity: 0;
+        }
+    }
+`;
+document.head.appendChild(estilosAdicionales);
+</script>
+
+            <div class="section" id="section5">
+                <h2>💌 Mensaje Final</h2>
+                <div class="question">Antes de terminar, ¿hay algo que quieras decirme?</div>
+                <textarea class="interactive-input" id="finalMessage" rows="4" placeholder="Tu mensaje especial para mí..."></textarea>
+                
+                <div style="text-align: center; margin-top: 20px;">
+                    <b>
+    <script>
+        let completedSections = 0;
+        const totalSections = 5;
+
+        function updateProgress() {
+            const progress = (completedSections / totalSections) * 100;
+            document.getElementById('progressBar').style.width = progress + '%';
+            document.getElementById('progressText').textContent = Math.round(progress) + '%';
+        }
+
+        function checkSectionCompletion(sectionId) {
+            const section = document.getElementById(sectionId);
+            const inputs = section.querySelectorAll('.interactive-input');
+            let filled = 0;
+            
+            inputs.forEach(input => {
+                if (input.value.trim() !== '') filled++;
+            });
+            
+            const isComplete = filled === inputs.length;
+            
+            if (isComplete && !section.classList.contains('completed')) {
+                section.classList.add('completed');
+                completedSections++;
+                updateProgress();
+            } else if (!isComplete && section.classList.contains('completed')) {
+                section.classList.remove('completed');
+                completedSections--;
+                updateProgress();
+            }
+        }
+
+        // Add event listeners to all inputs
+        document.querySelectorAll('.interactive-input').forEach(input => {
+            input.addEventListener('input', () => {
+                const sectionId = input.closest('.section').id;
+                checkSectionCompletion(sectionId);
+            });
+        });
+
+        function revealCompliment(card) {
+            const hidden = card.querySelector('span[style*="display:none"]');
+            if (hidden) {
+                hidden.style.display = 'block';
+                card.style.background = 'linear-gradient(45deg, #a8edea, #fed6e3)';
+            }
+        }
+
+        function showSurprise() {
+            document.getElementById('surpriseMessage').style.display = 'block';
+            // Add confetti effect
+            for (let i = 0; i < 50; i++) {
+                createConfetti();
+            }
+        }
+
+        function createConfetti() {
+            const confetti = document.createElement('div');
+            confetti.innerHTML = ['🎉', '✨', '🎊', '💝', '🌟'][Math.floor(Math.random() * 5)];
+            confetti.style.position = 'fixed';
+            confetti.style.left = Math.random() * window.innerWidth + 'px';
+            confetti.style.top = '-50px';
+            confetti.style.fontSize = '20px';
+            confetti.style.pointerEvents = 'none';
+            confetti.style.zIndex = '1000';
+            document.body.appendChild(confetti);
+            
+            const animation = confetti.animate([
+                { transform: 'translateY(-50px) rotate(0deg)', opacity: 1 },
+                { transform: `translateY(${window.innerHeight + 50}px) rotate(360deg)`, opacity: 0 }
+            ], {
+                duration: 3000,
+                easing: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+            });
+            
+            animation.onfinish = () => confetti.remove();
+        }
+
+
+
+       
+    </script>
+</body>
+</html>
